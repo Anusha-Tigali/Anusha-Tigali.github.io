@@ -176,8 +176,8 @@
   .profile-title-row:has(.profile-portrait) { padding-right: 0; }
   .profile-portrait { position: static; width: 80px; height: 110px; }
   .profile-portrait img { width: 80px; height: 110px; object-fit: contain; }
-  .home-page .profile-portrait { width: 69px; height: 90px; }
-  .home-page .profile-portrait img { width: 69px; height: 90px; }
+  .home-page .profile-portrait { width: 276px; height: 360px; }
+  .home-page .profile-portrait img { width: 276px; height: 360px; }
   .profile-name { font-size: 1.5rem; }
   .profile-mobile-summary { display: block; font-size: 1rem; line-height: 1.3; }
   .home-page .profile-mobile-summary { font-size: 28px; font-weight: 600; }
