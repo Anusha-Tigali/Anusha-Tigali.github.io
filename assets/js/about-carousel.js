@@ -11,23 +11,7 @@ if (carousel) {
   const isMobileCarousel = () => window.matchMedia("(max-width: 760px)").matches;
 
   const syncMobileCarouselHeight = () => {
-    if (!isMobileCarousel()) {
-      if (aboutMain) aboutMain.style.minHeight = "";
-      return;
-    }
-
-    const tallestSlide = slides.reduce((maxHeight, slide) => {
-      const previousStyle = slide.style.cssText;
-      slide.style.display = "flex";
-      slide.style.position = "relative";
-      slide.style.visibility = "hidden";
-      slide.style.opacity = "0";
-      const slideHeight = slide.getBoundingClientRect().height;
-      slide.style.cssText = previousStyle;
-      return Math.max(maxHeight, slideHeight);
-    }, 0);
-    const dotsHeight = carousel.querySelector(".about-carousel-dots")?.getBoundingClientRect().height ?? 0;
-    if (aboutMain) aboutMain.style.minHeight = `${Math.ceil(tallestSlide + dotsHeight + 8)}px`;
+    if (aboutMain) aboutMain.style.minHeight = "";
   };
 
   const showSlide = (nextIndex) => {

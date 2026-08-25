@@ -254,13 +254,16 @@
   .portfolio-mobile-footer p:last-child,
   .page-shell--interior > .site-footer p:last-child { text-align: left; }
   .page-shell--home > .site-footer { display: none; }
-  .about-page .page-shell--interior { gap: 2rem; padding-block: 1.5rem; }
+  .about-page .page-shell--interior { gap: 1rem; padding-block: 1.5rem; }
+  .about-page .case-study-header,
+  .about-page .page-shell--interior > .site-footer { flex: none; }
   .about-page .page-shell--interior > .site-footer { align-items: flex-start; flex-direction: column; gap: 4px; line-height: 1.3; white-space: normal; }
   .about-page .page-shell--interior > .site-footer a { overflow-wrap: anywhere; }
   .about-footer-illustration { right: 0; bottom: 1rem; left: 50%; width: 120vw; height: clamp(260px, 42dvh, 420px); transform: translateX(-50%); }
   .about-footer-illustration img { width: min(90vw, 380px); height: auto; max-width: none; margin-inline: auto; object-fit: contain; opacity: .7; }
-  .about-carousel { width: 100%; align-items: stretch; flex-direction: column; gap: 8px; touch-action: pan-y; transform: none; }
-  .about-carousel-viewport { display: block; width: 100%; height: auto; flex-basis: auto; }
+  .about-carousel { width: 100%; height: 100%; min-height: 0; align-items: stretch; flex: 1; flex-direction: column; gap: 8px; touch-action: pan-y; transform: none; }
+  .about-carousel-viewport { display: block; width: 100%; height: auto; min-height: 0; flex: 1 1 auto; overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .about-carousel-viewport::-webkit-scrollbar { display: none; }
   .about-card { position: relative; inset: auto; width: 100%; height: auto; min-height: 0; align-items: stretch; flex-direction: column; gap: 28px; padding: 32px; opacity: 1; transform: none; transition: none; visibility: visible; }
   .about-card[aria-hidden="true"] { display: none; }
   .about-card.is-before,
@@ -277,6 +280,6 @@
   .about-card--text { align-items: center; padding: 32px; }
   .about-card--text h2 { font-size: 20px; line-height: 1.3; }
   .about-card--text .about-card-body { margin-top: .75rem; font-size: 20px; line-height: 1.35; }
-  .about-carousel-dots { width: auto; height: 8px; flex-basis: auto; flex-direction: row; justify-content: center; }
+  .about-carousel-dots { width: auto; height: 8px; flex: none; flex-basis: auto; flex-direction: row; justify-content: center; }
   .about-carousel-dots button.is-active { width: 24px; height: 8px; }
 }
