@@ -202,6 +202,9 @@
 }
 
 @media (max-width: 760px) {
+  .case-study-concept h3,
+  .case-study-concept p,
+  .synthetic-data-context p { font-size: 20px; }
   .case-study-shell { --case-study-radius: 1.25rem; width: 100%; padding: 1.5rem 1rem max(1rem, env(safe-area-inset-bottom)); }
   .case-study-header { min-height: 72px; align-items: center; margin-bottom: 2rem; }
   .case-study-brand { margin-left: 0; font-size: 24px; line-height: 1; }
@@ -275,7 +278,7 @@
   .case-study-shell > .site-footer p:last-child { text-align: right; }
   .content-pending { width: 100%; padding-top: 0; }
   .content-pending-copy h1 { font-size: 28px; }
-  .content-pending-copy p { max-width: 340px; font-size: 16px; }
+  .content-pending-copy p { max-width: 340px; font-size: 20px; }
   .content-pending-scene { width: auto; max-width: min(100%, 340px); height: min(38dvh, 340px); margin-top: clamp(.25rem, 1dvh, .75rem); }
   .content-pending-thought { top: 17%; right: 3%; transform: scale(.86); }
   .content-pending-contact { margin-top: 0; }
