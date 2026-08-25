@@ -254,9 +254,10 @@
   .portfolio-mobile-footer p:last-child,
   .page-shell--interior > .site-footer p:last-child { text-align: left; }
   .page-shell--home > .site-footer { display: none; }
-  .about-page .page-shell--interior { gap: 1rem; padding-block: 1.5rem; }
+  .about-page .page-shell--interior { gap: 8px; padding-block: 12px; }
   .about-page .case-study-header,
   .about-page .page-shell--interior > .site-footer { flex: none; }
+  .about-page .case-study-header { min-height: 60px; }
   .about-page .page-shell--interior > .site-footer { align-items: flex-start; flex-direction: column; gap: 4px; line-height: 1.3; white-space: normal; }
   .about-page .page-shell--interior > .site-footer a { overflow-wrap: anywhere; }
   .about-footer-illustration { right: 0; bottom: 1rem; left: 50%; width: 120vw; height: clamp(260px, 42dvh, 420px); transform: translateX(-50%); }
