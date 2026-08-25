@@ -56,10 +56,17 @@ if (portfolioList) {
         dot.setAttribute('aria-current', index === displayIndex ? 'true' : 'false');
       });
       if (nextButton) {
-        const nextIndex = (displayIndex + 1) % mobileRows.length;
-        nextButton.innerHTML = `${mobileRows[nextIndex].dataset.mobileLabel} <span aria-hidden="true">→</span>`;
-        nextButton.dataset.nextIndex = String(nextIndex);
-        nextButton.setAttribute('aria-label', `Show next project: ${mobileRows[nextIndex].dataset.mobileLabel}`);
+        const hasNextCard = displayIndex < mobileRows.length - 1;
+        nextButton.hidden = !hasNextCard;
+        if (hasNextCard) {
+          const nextIndex = displayIndex + 1;
+          nextButton.innerHTML = `${mobileRows[nextIndex].dataset.mobileLabel} <span aria-hidden="true">→</span>`;
+          nextButton.dataset.nextIndex = String(nextIndex);
+          nextButton.setAttribute('aria-label', `Show next project: ${mobileRows[nextIndex].dataset.mobileLabel}`);
+        } else {
+          nextButton.removeAttribute('data-next-index');
+          nextButton.removeAttribute('aria-label');
+        }
       }
       syncMobileRailHeight();
     };
