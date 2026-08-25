@@ -33,15 +33,39 @@ if (carousel) {
     });
   };
 
+  const syncResponsiveSlides = () => {
+    if (isMobileCarousel()) {
+      slides.forEach((slide) => {
+        slide.classList.remove("is-active", "is-before");
+        slide.setAttribute("aria-hidden", "false");
+      });
+      return;
+    }
+
+    slides.forEach((slide, index) => {
+      const isActive = index === activeIndex;
+      slide.classList.toggle("is-active", isActive);
+      slide.classList.toggle("is-before", index < activeIndex);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+  };
+
   dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
 
-  window.addEventListener("load", syncMobileCarouselHeight);
+  window.addEventListener("load", () => {
+    syncMobileCarouselHeight();
+    syncResponsiveSlides();
+  });
   window.addEventListener("resize", () => {
     window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(syncMobileCarouselHeight, 120);
+    resizeTimer = window.setTimeout(() => {
+      syncMobileCarouselHeight();
+      syncResponsiveSlides();
+    }, 120);
   });
   document.fonts?.ready.then(syncMobileCarouselHeight);
   syncMobileCarouselHeight();
+  syncResponsiveSlides();
 
   window.addEventListener("wheel", (event) => {
     if (isMobileCarousel()) return;
@@ -65,7 +89,7 @@ if (carousel) {
   }, { passive: true });
 
   carousel.addEventListener("touchend", (event) => {
-    if (!touchStart || !isMobileCarousel()) return;
+    if (!touchStart || isMobileCarousel()) return;
     const touch = event.changedTouches[0];
     if (!touch) return;
     const distanceX = touchStart.x - touch.clientX;
