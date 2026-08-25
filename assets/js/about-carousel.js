@@ -1,12 +1,34 @@
 const carousel = document.querySelector(".about-carousel");
 
 if (carousel) {
+  const aboutMain = carousel.closest(".interior-main--about");
   const slides = [...carousel.querySelectorAll("[data-about-slide]")];
   const dots = [...carousel.querySelectorAll(".about-carousel-dots button")];
   let activeIndex = 0;
   let wheelLocked = false;
   let touchStart = null;
+  let resizeTimer = null;
   const isMobileCarousel = () => window.matchMedia("(max-width: 760px)").matches;
+
+  const syncMobileCarouselHeight = () => {
+    if (!isMobileCarousel()) {
+      if (aboutMain) aboutMain.style.minHeight = "";
+      return;
+    }
+
+    const tallestSlide = slides.reduce((maxHeight, slide) => {
+      const previousStyle = slide.style.cssText;
+      slide.style.display = "flex";
+      slide.style.position = "relative";
+      slide.style.visibility = "hidden";
+      slide.style.opacity = "0";
+      const slideHeight = slide.getBoundingClientRect().height;
+      slide.style.cssText = previousStyle;
+      return Math.max(maxHeight, slideHeight);
+    }, 0);
+    const dotsHeight = carousel.querySelector(".about-carousel-dots")?.getBoundingClientRect().height ?? 0;
+    if (aboutMain) aboutMain.style.minHeight = `${Math.ceil(tallestSlide + dotsHeight + 8)}px`;
+  };
 
   const showSlide = (nextIndex) => {
     const clampedIndex = Math.max(0, Math.min(slides.length - 1, nextIndex));
@@ -28,6 +50,14 @@ if (carousel) {
   };
 
   dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+
+  window.addEventListener("load", syncMobileCarouselHeight);
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(syncMobileCarouselHeight, 120);
+  });
+  document.fonts?.ready.then(syncMobileCarouselHeight);
+  syncMobileCarouselHeight();
 
   window.addEventListener("wheel", (event) => {
     if (isMobileCarousel()) return;
