@@ -256,7 +256,7 @@
   .page-shell--home > .site-footer { display: none; }
   .about-page .page-shell--interior { gap: 2rem; padding-block: 1.5rem; }
   .about-footer-illustration { right: 0; bottom: 1rem; left: 50%; width: 120vw; height: clamp(260px, 42dvh, 420px); transform: translateX(-50%); }
-  .about-footer-illustration img { width: min(120vw, 480px); height: auto; max-width: none; margin-inline: auto; object-fit: contain; opacity: .7; }
+  .about-footer-illustration img { width: min(90vw, 380px); height: auto; max-width: none; margin-inline: auto; object-fit: contain; opacity: .7; }
   .about-carousel { width: 100%; align-items: stretch; flex-direction: column; gap: 8px; touch-action: pan-y; transform: none; }
   .about-carousel-viewport { display: block; width: 100%; height: auto; flex-basis: auto; }
   .about-card { position: relative; inset: auto; width: 100%; height: auto; min-height: 0; align-items: stretch; flex-direction: column; gap: 28px; padding: 32px; opacity: 1; transform: none; transition: none; visibility: visible; }
