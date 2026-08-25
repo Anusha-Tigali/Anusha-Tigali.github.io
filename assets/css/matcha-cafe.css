@@ -1,0 +1,56 @@
+.matcha-cafe-page { width: 100%; height: 100dvh; min-height: 0; overflow: hidden; }
+.matcha-cafe-shell { display: grid; width: min(100%, 1440px); height: 100dvh; min-height: 0; grid-template-rows: auto minmax(0, 1fr) auto; gap: 1.5rem; margin-inline: auto; overflow: hidden; padding: clamp(1.5rem, 4dvh, 3.75rem) var(--page-gutter) 1.5rem; }
+.matcha-cafe-header, .matcha-cafe-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.matcha-cafe-wordmark { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; line-height: 1; }
+.matcha-cafe-avatar img { display: block; width: 48px; height: 48px; object-fit: contain; }
+.matcha-cafe-main { display: grid; min-height: 0; grid-template-columns: minmax(0, 1.45fr) minmax(320px, .95fr); align-items: stretch; gap: clamp(2rem, 6vw, 6rem); }
+.matcha-cafe-content { display: flex; min-height: 0; align-items: center; flex-direction: column; justify-content: center; }
+.matcha-cafe-step { width: 100%; text-align: center; }
+.matcha-cafe-step[hidden] { display: none; }
+.matcha-cafe-step h1 { margin-top: 1.25rem; font-family: var(--font-body); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
+.matcha-cafe-step--intro > p:last-of-type { margin-top: 1.75rem; font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.35; }
+.matcha-cafe-code { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; }
+.matcha-cafe-order { width: min(100%, 280px); min-height: 48px; margin-top: 1.75rem; border: 0; border-radius: .5rem; background: var(--color-ink); color: #fff; font: inherit; font-size: 1.125rem; cursor: pointer; }
+.matcha-cafe-order:hover, .matcha-cafe-order:focus-visible { background: #b4d7ff; color: var(--color-ink); }
+.matcha-cafe-fact { max-width: 760px; margin-inline: auto; color: #6f6b63; line-height: 1.35; }
+.matcha-cafe-options { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.matcha-cafe-card { min-height: clamp(160px, 25vh, 300px); border: 1px solid rgb(0 0 0 / 15%); border-radius: 1rem; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease; }
+.matcha-cafe-card span { opacity: 0; }
+.matcha-cafe-card:hover, .matcha-cafe-card:focus-visible { box-shadow: 0 8px 24px rgb(0 0 0 / 12%); outline: 3px solid var(--color-ink); outline-offset: 3px; transform: translateY(-4px); }
+.matcha-cafe-card--sand { background: #e4c49b; }
+.matcha-cafe-card--blue { background: #86b9d0; }
+.matcha-cafe-card--green { background: #abc093; }
+.matcha-cafe-card--gray { background: #ccc; }
+.matcha-cafe-placeholder { display: flex; min-height: min(68vh, 700px); align-items: center; justify-content: center; background: #d9d9d9; color: #555; }
+.matcha-cafe-progress { display: flex; align-items: center; gap: .625rem; margin-top: 1.5rem; }
+.matcha-cafe-progress span { width: 10px; height: 10px; border-radius: 999px; background: #c7c3ba; transition: width 180ms ease, background 180ms ease; }
+.matcha-cafe-progress span.is-active { width: 32px; background: #b4d7ff; }
+.matcha-cafe-shop { display: flex; min-height: 0; align-items: center; flex-direction: column; justify-content: center; text-align: center; }
+.matcha-cafe-shop-stage { position: relative; display: grid; width: min(100%, 430px); max-height: min(76dvh, 720px); place-items: center; }
+.matcha-cafe-shop-canvas, .matcha-cafe-process-canvas { display: block; grid-area: 1 / 1; width: 100%; height: auto; max-height: min(70vh, 720px); object-fit: contain; }
+.matcha-cafe-process-canvas[hidden], .matcha-cafe-shop-canvas[hidden] { display: none; }
+.matcha-cafe-speech { position: absolute; top: 33%; right: -8%; max-width: 190px; padding: .75rem 1rem; border: 1.5px solid var(--color-ink); border-radius: 1rem; background: var(--color-paper); font-size: 1rem; line-height: 1.25; text-align: left; animation: matcha-speech-in 320ms ease both; }
+.matcha-cafe-speech::after { position: absolute; bottom: -.5rem; left: 1.5rem; width: .9rem; height: .9rem; border-right: 1.5px solid var(--color-ink); border-bottom: 1.5px solid var(--color-ink); background: var(--color-paper); content: ""; transform: rotate(45deg); }
+.matcha-cafe-speech[hidden] { display: none; }
+@keyframes matcha-speech-in { from { opacity: 0; transform: translateY(.5rem) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.matcha-cafe-footer { font-size: .875rem; }
+.matcha-cafe-footer a:hover { text-decoration: underline; text-underline-offset: .15em; }
+@media (max-width: 760px) {
+  .matcha-cafe-shell { gap: 1rem; padding: 1rem; }
+  .matcha-cafe-avatar img { width: 40px; height: 40px; }
+  .matcha-cafe-main { display: grid; grid-template-rows: minmax(0, .8fr) minmax(0, 1.2fr); gap: 1rem; }
+  .matcha-cafe-shop { min-height: 0; grid-row: 1; }
+  .matcha-cafe-shop-stage { width: min(100%, 288px); height: 100%; max-height: none; }
+  .matcha-cafe-shop-canvas, .matcha-cafe-process-canvas { width: auto; max-width: 100%; height: 100%; max-height: 100%; }
+  .matcha-cafe-speech { top: 28%; right: 0; max-width: 150px; padding: .5rem .75rem; font-size: .75rem; }
+  .matcha-cafe-content { min-height: 0; grid-row: 2; overflow: hidden; }
+  .matcha-cafe-step h1 { margin-top: .75rem; font-size: 1.5rem; }
+  .matcha-cafe-step--intro > p:last-of-type { margin-top: .75rem; font-size: .875rem; }
+  .matcha-cafe-order { min-height: 42px; margin-top: .75rem; }
+  .matcha-cafe-fact { font-size: .75rem; }
+  .matcha-cafe-options { gap: .75rem; }
+  .matcha-cafe-card { height: min(10dvh, 90px); min-height: 0; }
+  .matcha-cafe-placeholder { height: 100%; min-height: 0; }
+  .matcha-cafe-progress { margin-top: .75rem; }
+  .matcha-cafe-footer { font-size: .7rem; }
+}

@@ -1,0 +1,38 @@
+html { background: var(--color-paper); color-scheme: light; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+}
+a:focus-visible { outline: 3px solid #2455e6; outline-offset: 4px; }
+h1 { font-family: var(--font-display); font-size: var(--text-title); font-weight: 400; letter-spacing: -0.04em; line-height: 1.2; }
+.visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+
+[data-scroll-header] {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: var(--color-paper);
+  transition: transform 180ms cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+[data-scroll-header].is-scroll-hidden { transform: translateY(calc(-100% - 1px)); }
+
+body.is-scroll-header-visible .case-study-jump,
+body.is-scroll-header-visible .learning-logs-tree { top: calc(var(--scroll-header-height, 0px) + 1rem); }
+
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: page-leave 120ms ease-in both; }
+::view-transition-new(root) { animation: page-enter 180ms cubic-bezier(.22, 1, .36, 1) both; }
+@keyframes page-leave { to { opacity: 0; transform: translateY(-2px); } }
+@keyframes page-enter { from { opacity: 0; transform: translateY(3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
+}

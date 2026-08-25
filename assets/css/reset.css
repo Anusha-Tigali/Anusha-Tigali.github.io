@@ -1,0 +1,6 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: light; }
+body, h1, p, dl, dd, ul { margin: 0; }
+ul { list-style: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
