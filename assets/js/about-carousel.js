@@ -5,7 +5,8 @@ if (carousel) {
   const dots = [...carousel.querySelectorAll(".about-carousel-dots button")];
   let activeIndex = 0;
   let wheelLocked = false;
-  let touchStartY = null;
+  let touchStart = null;
+  const isMobileCarousel = () => window.matchMedia("(max-width: 760px)").matches;
 
   const showSlide = (nextIndex) => {
     const clampedIndex = Math.max(0, Math.min(slides.length - 1, nextIndex));
@@ -29,6 +30,7 @@ if (carousel) {
   dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
 
   window.addEventListener("wheel", (event) => {
+    if (isMobileCarousel()) return;
     if (Math.abs(event.deltaY) < 8) return;
     event.preventDefault();
     if (wheelLocked) return;
@@ -38,21 +40,24 @@ if (carousel) {
   }, { passive: false });
 
   window.addEventListener("keydown", (event) => {
-    if (!["ArrowDown", "ArrowUp", "PageDown", "PageUp"].includes(event.key)) return;
+    if (!["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "PageDown", "PageUp"].includes(event.key)) return;
     event.preventDefault();
-    showSlide(activeIndex + (["ArrowDown", "PageDown"].includes(event.key) ? 1 : -1));
+    showSlide(activeIndex + (["ArrowDown", "ArrowRight", "PageDown"].includes(event.key) ? 1 : -1));
   });
 
   carousel.addEventListener("touchstart", (event) => {
-    touchStartY = event.changedTouches[0]?.clientY ?? null;
+    const touch = event.changedTouches[0];
+    touchStart = touch ? { x: touch.clientX, y: touch.clientY } : null;
   }, { passive: true });
 
   carousel.addEventListener("touchend", (event) => {
-    if (touchStartY === null) return;
-    const touchEndY = event.changedTouches[0]?.clientY ?? touchStartY;
-    const distance = touchStartY - touchEndY;
-    touchStartY = null;
-    if (Math.abs(distance) < 40) return;
-    showSlide(activeIndex + (distance > 0 ? 1 : -1));
+    if (!touchStart || !isMobileCarousel()) return;
+    const touch = event.changedTouches[0];
+    if (!touch) return;
+    const distanceX = touchStart.x - touch.clientX;
+    const distanceY = touchStart.y - touch.clientY;
+    touchStart = null;
+    if (Math.abs(distanceX) < 40 || Math.abs(distanceX) <= Math.abs(distanceY)) return;
+    showSlide(activeIndex + (distanceX > 0 ? 1 : -1));
   }, { passive: true });
 }
