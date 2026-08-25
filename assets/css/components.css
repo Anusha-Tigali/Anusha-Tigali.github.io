@@ -4,6 +4,7 @@
 .profile-title-row:has(.profile-portrait) { padding-right: 5rem; }
 .profile-title-row { display: flex; min-height: 58px; align-items: center; gap: .625rem; overflow: hidden; }
 .profile-name { min-width: 0; flex: 1; font-family: var(--font-display); font-size: var(--text-title); font-weight: 400; letter-spacing: -.04em; line-height: 1.2; }
+.home-page .profile-name { font-size: 36px; font-weight: 700; }
 .profile-mobile-summary,
 .profile-mobile-meta { display: none; }
 .profile-actions { display: flex; flex: none; align-items: center; gap: .625rem; }
