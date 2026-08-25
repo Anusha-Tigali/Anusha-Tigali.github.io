@@ -4,6 +4,7 @@ if (carousel) {
   const aboutMain = carousel.closest(".interior-main--about");
   const slides = [...carousel.querySelectorAll("[data-about-slide]")];
   const dots = [...carousel.querySelectorAll(".about-carousel-dots button")];
+  const videos = [...carousel.querySelectorAll("video[autoplay]")];
   let activeIndex = 0;
   let wheelLocked = false;
   let touchStart = null;
@@ -51,6 +52,28 @@ if (carousel) {
   };
 
   dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+
+  videos.forEach((video) => {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+  });
+
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: [0, 0.25] });
+    videos.forEach((video) => videoObserver.observe(video));
+  } else {
+    videos.forEach((video) => video.play().catch(() => {}));
+  }
 
   window.addEventListener("load", () => {
     syncMobileCarouselHeight();
