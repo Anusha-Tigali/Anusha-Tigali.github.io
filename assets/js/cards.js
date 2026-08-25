@@ -38,10 +38,17 @@ if (portfolioList) {
     portfolioList.addEventListener('pointerleave', clearActiveCard);
   } else {
     const mobileRows = rows;
+    let activeMobileRow = mobileRows[0];
+
+    const syncMobileRailHeight = () => {
+      if (!activeMobileRow) return;
+      portfolioList.style.height = `${Math.ceil(activeMobileRow.getBoundingClientRect().height)}px`;
+    };
 
     const activateMobileCard = (row, displayIndex) => {
       mobileRows.forEach((item) => item.classList.remove('is-mobile-initial', 'is-active'));
       row.classList.add('is-active');
+      activeMobileRow = row;
       portfolioList.classList.add('is-card-active');
       if (count) count.textContent = `${displayIndex + 1}/${rows.length}`;
       dots.forEach((dot, index) => {
@@ -54,6 +61,7 @@ if (portfolioList) {
         nextButton.dataset.nextIndex = String(nextIndex);
         nextButton.setAttribute('aria-label', `Show next project: ${mobileRows[nextIndex].dataset.mobileLabel}`);
       }
+      syncMobileRailHeight();
     };
 
     activateMobileCard(mobileRows[0], 0);
@@ -92,6 +100,9 @@ if (portfolioList) {
     if (nextButton) {
       nextButton.addEventListener('click', () => scrollToMobileCard(Number(nextButton.dataset.nextIndex)));
     }
+
+    window.addEventListener('resize', syncMobileRailHeight);
+    document.fonts?.ready.then(syncMobileRailHeight);
 
     requestRailScrollUpdate();
   }

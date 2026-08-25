@@ -243,7 +243,7 @@
   .portfolio-row:is(.is-active, .is-mobile-initial) .portfolio-preview { opacity: 1; visibility: visible; transform: none; }
   .portfolio-row--expandable.is-active,
   .portfolio-row--expandable:focus-within { height: auto; min-height: 0; max-height: none; }
-  .portfolio-mobile-pagination { display: flex; height: 18px; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+  .portfolio-mobile-pagination { display: flex; height: 18px; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
   .portfolio-mobile-dots { display: flex; align-items: center; gap: 12px; }
   .portfolio-mobile-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: #cdc8be; cursor: pointer; }
   .portfolio-mobile-dots button.is-active { width: 24px; background: #b4d7ff; }
