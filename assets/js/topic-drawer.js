@@ -5,7 +5,6 @@
   const drawer = layer.querySelector(".topic-drawer");
   const title = layer.querySelector("#topic-drawer-title");
   const description = layer.querySelector("#topic-drawer-description");
-  const media = layer.querySelector(".topic-drawer-media");
   const primary = layer.querySelector(".topic-drawer-primary");
   const closeButton = layer.querySelector(".topic-drawer-close");
   const iconCloseButton = layer.querySelector(".topic-drawer-icon-close");
@@ -46,7 +45,6 @@
       trigger = link;
       title.textContent = topic.title;
       description.textContent = topic.description;
-      media.hidden = link.dataset.drawer !== "apis";
       primary.textContent = topic.label;
       primary.href = topic.href || link.href;
       layer.hidden = false;
