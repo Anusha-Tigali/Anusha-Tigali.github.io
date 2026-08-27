@@ -84,7 +84,7 @@ html:has(body.learning-logs-page) { scroll-behavior: smooth; }
   .learning-log-article + .learning-log-article { padding-top: 4rem; }
   .learning-log-kicker { margin-bottom: .75rem; font-size: .75rem; }
   .learning-log-subtitle { margin-top: 1rem; font-size: 1rem; }
-  .learning-log-metadata { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; padding-block: 1.25rem; }
+  .learning-log-metadata { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; padding-block: 1.25rem; font-size: .875rem; }
   .learning-log-metadata > div { grid-column: auto; grid-row: auto; }
   .learning-log-shoutouts { gap: 8px; margin-top: 20px; }
   .learning-log-shoutouts img { border-radius: 6px; }
