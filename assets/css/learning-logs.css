@@ -88,8 +88,8 @@ html:has(body.learning-logs-page) { scroll-behavior: smooth; }
   .learning-log-metadata > div { grid-column: auto; grid-row: auto; }
   .learning-log-shoutouts { gap: 8px; margin-top: 20px; }
   .learning-log-shoutouts img { border-radius: 6px; }
-  .learning-log-lede { margin-top: 1.5rem; font-size: 1rem; line-height: 1.55; }
-  .learning-log-copy { margin-top: 2rem; font-size: 1rem; }
+  .learning-log-lede { margin-top: 1.5rem; font-size: 1.125rem; line-height: 1.55; }
+  .learning-log-copy { margin-top: 2rem; font-size: 1.125rem; }
   .learning-log-copy section { margin-top: 3.5rem; }
   .learning-log-copy h2 { margin-bottom: 20px; font-size: 36px; }
   .learning-log-callout { margin-block: 1.5rem; font-size: 1.2em; }
