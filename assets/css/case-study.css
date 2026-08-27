@@ -35,7 +35,6 @@
 .case-study-intro-card img,
 .case-study-intro-card video { display: block; width: 100%; height: auto; overflow: hidden; border-radius: 12px; background: #eae5d9; object-fit: contain; object-position: center; }
 .case-study-intro-card > figcaption { display: block; width: 100%; margin: 0; padding: 0; background: transparent; color: #666; font-family: var(--font-body); font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: 0; line-height: 1.35; text-align: left; }
-.case-study-beyond-placeholder { display: grid; width: 100%; border-radius: 12px; background: #eae5d9; color: #666; font-size: 14px; aspect-ratio: 4 / 3; place-items: center; }
 .case-study-media { width: 100%; min-width: 0; margin: 0; }
 .case-study-media::before { display: block; border-radius: var(--case-study-radius); background: var(--case-study-surface); content: ""; aspect-ratio: 2 / 1; }
 .case-study-media:has(img)::before,
