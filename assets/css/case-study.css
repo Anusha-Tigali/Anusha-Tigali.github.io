@@ -30,6 +30,7 @@
 .case-study-intro-cards h2 { margin: 0; font-family: var(--font-body); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; line-height: 1.25; }
 .case-study-intro-cards--inline { margin-bottom: 2rem; }
 .case-study-intro-card-grid { display: grid; width: 100%; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.case-study-intro-card-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-study-intro-card { display: flex; width: 100%; min-width: 0; height: fit-content; margin: 0; overflow: visible; background: transparent; flex-direction: column; gap: 8px; }
 .case-study-intro-card img,
 .case-study-intro-card video { display: block; width: 100%; height: auto; overflow: hidden; border-radius: 12px; background: #eae5d9; object-fit: contain; object-position: center; }
