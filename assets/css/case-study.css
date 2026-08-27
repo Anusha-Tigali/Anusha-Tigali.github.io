@@ -56,6 +56,9 @@
 #problem .case-study-media-controls { padding-top: 12px; }
 #changes .case-study-media-controls { display: none; }
 #solution .case-study-media-controls { display: none; }
+@media (min-width: 761px) {
+  #decisions .case-study-media-controls { display: none; }
+}
 .case-study-media-arrow { display: grid; width: 2rem; height: 2rem; padding: 0; border: 0; background: transparent; color: #222; cursor: pointer; place-items: center; }
 .case-study-media-arrow::before { width: .75rem; height: .75rem; border-top: .1875rem solid currentColor; border-left: .1875rem solid currentColor; content: ""; transform: rotate(-45deg); }
 .case-study-media-arrow--next::before { transform: rotate(135deg); }
