@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/base.css?v=20260823-3">
     <link rel="stylesheet" href="/assets/css/layout.css?v=20260825-5">
-    <link rel="stylesheet" href="/assets/css/components.css?v=20260825-31">
-    <link rel="stylesheet" href="/assets/css/case-study.css?v=20260825-75">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20260826-1">
+    <link rel="stylesheet" href="/assets/css/case-study.css?v=20260826-1">
     <link rel="stylesheet" href="/assets/css/not-found.css?v=20260823-2">
     <link rel="stylesheet" href="/assets/css/matcha-cafe.css?v=20260814-5">
-    <link rel="stylesheet" href="/assets/css/learning-logs.css?v=20260823-4">
+    <link rel="stylesheet" href="/assets/css/learning-logs.css?v=20260826-1">
     <script src="/assets/js/case-study.js?v=20260815-8" defer></script>
     <script src="/assets/js/cards.js?v=20260825-7" defer></script>
     <script src="/assets/js/topic-drawer.js?v=20260814-3" defer></script>
@@ -37,7 +37,9 @@
 <div class="case-study-shell">
   <header class="case-study-header" data-scroll-header>
   <a class="case-study-brand" href="/">Anusha Tigali</a>
-  <img class="case-study-mobile-portrait" src="/assets/images/profile-wind.gif" alt="">
+  <a class="case-study-mobile-portrait" href="/about/" aria-label="About Anusha">
+    <img src="/assets/images/profile-wind.gif" alt="">
+  </a>
   <nav class="case-study-nav" aria-label="Case study navigation">
     <a href="/">Back to home</a>
     
@@ -45,9 +47,9 @@
       <a href="/work/curl-import/">Next case study: Reducing friction for 3 million developers</a>
     
   </nav>
-  <span class="case-study-portrait" aria-hidden="true">
+  <a class="case-study-portrait" href="/about/" aria-label="About Anusha">
     <img src="/assets/images/profile-wind.gif" alt="">
-  </span>
+  </a>
 </header>
 
 
@@ -101,8 +103,8 @@
         
       </dl>
       
-        <div class="case-study-project-summary">
-          <p>I designed a multi-table synthetic data generator that creates realistic, connected enterprise data for testing and evaluating AI.</p>
+        <div class="case-study-project-summary case-study-project-summary--bold">
+          <p>Designed a multi-table synthetic data generator that creates realistic, connected enterprise data for testing and evaluating AI.</p>
         </div>
       
     </section>
@@ -211,7 +213,7 @@
         <div>
           <h3>2. Generate from context</h3>
           <p>Starting with an empty scenario field would move too much work back to the user.</p>
-          <p>We used the selected tables and fields to suggest relevant scenarios that users could choose, refine, or replace. <strong>Invent → Describe → Generate</strong> became <strong>Recognize → Refine → Generate.</strong></p>
+          <p>We used the selected tables and fields to suggest relevant scenarios that users could choose, refine, or replace. <strong>Define scenario → Describe → Generate</strong> became <strong>Recognize → Refine → Generate.</strong></p>
         </div>
         <figure class="case-study-media case-study-strategy-media">
           <video src="/assets/images/synthetic-data-scenarios.mov" poster="/assets/images/synthetic-data-scenarios-poster.png" aria-label="Generate scenarios using the selected tables as context" autoplay muted loop playsinline preload="metadata"></video>
@@ -272,8 +274,7 @@
   </main>
 
   <footer class="site-footer">
-  <p>© 2026 | Built using Codex in VScode, hosted on GitHub</p>
-  <p><a href="mailto:anusha.tigali@gmail.com">anusha.tigali@gmail.com</a></p>
+  <p>© 2026 | Built using Figma, Codex, VSCode and Github</p>
 </footer>
 
 </div>

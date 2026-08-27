@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/base.css?v=20260823-3">
     <link rel="stylesheet" href="/assets/css/layout.css?v=20260825-5">
-    <link rel="stylesheet" href="/assets/css/components.css?v=20260825-31">
-    <link rel="stylesheet" href="/assets/css/case-study.css?v=20260825-75">
+    <link rel="stylesheet" href="/assets/css/components.css?v=20260826-1">
+    <link rel="stylesheet" href="/assets/css/case-study.css?v=20260826-1">
     <link rel="stylesheet" href="/assets/css/not-found.css?v=20260823-2">
     <link rel="stylesheet" href="/assets/css/matcha-cafe.css?v=20260814-5">
-    <link rel="stylesheet" href="/assets/css/learning-logs.css?v=20260823-4">
+    <link rel="stylesheet" href="/assets/css/learning-logs.css?v=20260826-1">
     <script src="/assets/js/case-study.js?v=20260815-8" defer></script>
     <script src="/assets/js/cards.js?v=20260825-7" defer></script>
     <script src="/assets/js/topic-drawer.js?v=20260814-3" defer></script>
@@ -37,7 +37,9 @@
 <div class="case-study-shell">
   <header class="case-study-header" data-scroll-header>
   <a class="case-study-brand" href="/">Anusha Tigali</a>
-  <img class="case-study-mobile-portrait" src="/assets/images/profile-wind.gif" alt="">
+  <a class="case-study-mobile-portrait" href="/about/" aria-label="About Anusha">
+    <img src="/assets/images/profile-wind.gif" alt="">
+  </a>
   <nav class="case-study-nav" aria-label="Case study navigation">
     <a href="/">Back to home</a>
     
@@ -45,9 +47,9 @@
       <a href="/work/synthetic-data/">Next case study: Preserving relationships with synthetic data</a>
     
   </nav>
-  <span class="case-study-portrait" aria-hidden="true">
+  <a class="case-study-portrait" href="/about/" aria-label="About Anusha">
     <img src="/assets/images/profile-wind.gif" alt="">
-  </span>
+  </a>
 </header>
 
 
@@ -234,27 +236,27 @@
   <div class="case-study-concept-grid">
     <article class="case-study-concept">
       <h3>AI admin</h3>
-      <p>The person configuring enterprise data and relationships. They understand their organization's systems but may not have knowledge graph expertise.</p>
+      <p>An admin is a ServiceNow persona who deploys and manages AI solutions across the organization.</p>
     </article>
     <article class="case-study-concept">
       <h3>Knowledge graph</h3>
-      <p>A connected model of enterprise entities and their relationships, giving AI context that isolated records cannot provide.</p>
+      <p>A connected view of enterprise entities and relationships that gives data context and meaning.</p>
     </article>
     <article class="case-study-concept">
       <h3>Node</h3>
-      <p>An entity in the graph, such as an employee, device, policy, department, or business service.</p>
+      <p>An entity represented by a ServiceNow table, such as Employee or Incident.</p>
     </article>
     <article class="case-study-concept">
       <h3>Edge</h3>
-      <p>A relationship between two nodes, such as “owns,” “reports to,” “depends on,” or “is governed by.”</p>
+      <p>A relationship connecting two nodes, such as an employee “reports to” a manager.</p>
     </article>
     <article class="case-study-concept">
       <h3>Table</h3>
-      <p>The system-level source where records are stored. Tables become meaningful to AI when their relationships are defined.</p>
+      <p>A list of records organized into columns, used as the data source for a node.</p>
     </article>
     <article class="case-study-concept">
       <h3>Graph Builder</h3>
-      <p>The tool I designed for AI admins to select enterprise data, define relationships, and configure the context AI uses.</p>
+      <p>A no-code workspace for creating graph schemas and configuring nodes, properties, and relationships.</p>
     </article>
   </div>
 </section>
@@ -292,8 +294,8 @@
   <div class="case-study-columns case-study-columns--4">
     <p><strong>First of its kind.</strong> Designed and shipped ServiceNow's first Knowledge Graph Builder.</p>
     <p><strong>Foundation layer.</strong> Established the knowledge layer powering AI Agents, Search, Virtual Agent, and personalization.</p>
-    <p><strong>Patent pending.</strong> Filed a patent for the enterprise relationship model.</p>
-    <p><strong>Cross-functional adoption.</strong> Multiple business units expressed interest in natural-language querying and semantic search.</p>
+    <p><strong>Patent pending.</strong> Parts of this work are included in an ongoing patent application.</p>
+    <p><strong>Cross-functional adoption.</strong> Adoption across business units established Knowledge Graph as a strategic platform asset, powering scalable, personalized AI experiences across ServiceNow.</p>
   </div>
 </section>
 
@@ -310,8 +312,7 @@
   </main>
 
   <footer class="site-footer">
-  <p>© 2026 | Built using Codex in VScode, hosted on GitHub</p>
-  <p><a href="mailto:anusha.tigali@gmail.com">anusha.tigali@gmail.com</a></p>
+  <p>© 2026 | Built using Figma, Codex, VSCode and Github</p>
 </footer>
 
 </div>
