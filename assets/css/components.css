@@ -11,7 +11,7 @@
 .profile-actions a:hover { text-decoration-thickness: 2px; }
 .profile-actions img { display: block; width: 17px; height: 17px; }
 .profile-actions .profile-action-icon { display: none; }
-.profile-metadata { display: grid; grid-template-columns: 1.12fr .9fr .68fr 3.1fr; justify-content: space-between; gap: 1.5rem; font-size: var(--text-small); }
+.profile-metadata { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); justify-content: space-between; gap: 1.5rem; font-size: var(--text-small); }
 .metadata-item { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
 .metadata-item dt { font-weight: 400; }
 .metadata-item dd { font-weight: 700; line-height: 1.28; }
@@ -166,9 +166,6 @@
 .coming-soon { margin-bottom: 3rem; font-size: 1.5rem; }
 .back-link { width: max-content; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
 .topic-drawer-layer { display: none; }
-@media (max-width: 1000px) {
-  .profile-metadata { grid-template-columns: repeat(3, 1fr); row-gap: 1.25rem; }
-}
 @media (max-width: 760px) {
   .home-page { --mobile-card-height: 100%; min-height: 0; overscroll-behavior-x: none; }
   .home-page .page-shell--home { position: static; width: 100%; }
