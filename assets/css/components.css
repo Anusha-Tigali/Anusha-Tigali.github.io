@@ -11,8 +11,8 @@
 .profile-actions a:hover { text-decoration-thickness: 2px; }
 .profile-actions img { display: block; width: 17px; height: 17px; }
 .profile-actions .profile-action-icon { display: none; }
-.profile-metadata { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); justify-content: space-between; gap: 1.5rem; font-size: var(--text-small); }
-.metadata-item { display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
+.profile-metadata { display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(1.5rem, 3vw, 4rem); font-size: var(--text-small); }
+.metadata-item { display: flex; min-width: 0; flex: 0 1 auto; flex-direction: column; gap: var(--space-1); }
 .metadata-item dt { font-weight: 400; }
 .metadata-item dd { font-weight: 700; line-height: 1.28; }
 .metadata-item-prefix { font-weight: 700; }
