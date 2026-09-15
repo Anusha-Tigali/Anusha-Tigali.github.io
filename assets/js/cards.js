@@ -2,7 +2,6 @@ const portfolioList = document.querySelector('.portfolio-index ul');
 
 if (portfolioList) {
   const rows = [...portfolioList.querySelectorAll('.portfolio-row')];
-  const expandableRows = rows.filter((row) => row.classList.contains('portfolio-row--expandable'));
   const activeClasses = ['portfolio-active-1', 'portfolio-active-2', 'portfolio-active-3'];
   const count = document.querySelector('.portfolio-mobile-count');
   const dots = [...document.querySelectorAll('.portfolio-mobile-dots button')];
@@ -30,12 +29,29 @@ if (portfolioList) {
   };
 
   if (!mobileViewport.matches) {
+    const restoreKeyboardCard = () => {
+      clearActiveCard();
+      const focusedLink = portfolioList.querySelector('a:focus-visible');
+      if (focusedLink) setActiveCard(focusedLink.closest('.portfolio-row'));
+    };
+
     portfolioList.addEventListener('pointerover', (event) => {
       const row = event.target.closest('.portfolio-row');
       if (row && portfolioList.contains(row)) setActiveCard(row);
     });
 
-    portfolioList.addEventListener('pointerleave', clearActiveCard);
+    portfolioList.addEventListener('pointerleave', restoreKeyboardCard);
+    portfolioList.addEventListener('focusin', (event) => {
+      if (event.target.matches('a:focus-visible')) {
+        setActiveCard(event.target.closest('.portfolio-row'));
+      }
+    });
+    portfolioList.addEventListener('focusout', clearActiveCard);
+
+    // Back/Forward can restore the document with its old hover classes and link focus.
+    // Keep keyboard focus useful without letting a previous mouse click pin a card open.
+    window.addEventListener('pagehide', clearActiveCard);
+    window.addEventListener('pageshow', restoreKeyboardCard);
   } else {
     const mobileRows = rows;
     let activeMobileRow = mobileRows[0];
