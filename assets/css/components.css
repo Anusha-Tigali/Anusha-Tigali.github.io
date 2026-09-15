@@ -189,6 +189,7 @@
   .home-page .profile-mobile-meta-tags,
   .home-page .profile-mobile-meta-links { display: contents; }
   .home-page .profile-mobile-meta-tags > span:not([aria-hidden="true"]) { min-width: 0; }
+  .home-page .profile-mobile-meta-tags a,
   .home-page .profile-mobile-meta-links a { text-decoration: underline; text-underline-offset: .18em; }
   .profile-actions { gap: .75rem; }
   .home-page .profile-actions { display: none; }
