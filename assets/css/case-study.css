@@ -1,4 +1,5 @@
 .case-study-shell { --case-study-surface: #e9e4da; --case-study-radius: 1.5rem; width: min(100%, calc(var(--content-width) + (2 * var(--page-gutter)))); min-height: 100vh; margin-inline: auto; padding: var(--page-block) var(--page-gutter) 2rem; }
+.case-study-shell > .profile-header { flex: none; margin-bottom: 2.5rem; }
 .case-study-header { position: sticky; display: flex; min-height: 58px; align-items: center; gap: .625rem; margin-bottom: 2.5rem; padding-inline: .25rem 5rem; }
 .case-study-brand { min-width: 0; flex: 1; font-family: var(--font-display); font-size: var(--text-title); font-weight: 400; letter-spacing: -.04em; line-height: 1.2; }
 .case-study-mobile-portrait { display: none; }
@@ -173,7 +174,7 @@
 .synthetic-data-case-study .case-study-section > p:not(.case-study-lede) { max-width: 100%; line-height: 1.45; overflow-wrap: anywhere; }
 .case-study-shell > .site-footer { align-items: center; margin-top: 3rem; padding-top: 0; }
 .case-study-shell:has(.case-study-main--pending) { display: flex; height: 100dvh; min-height: 0; flex-direction: column; overflow: hidden; }
-.case-study-shell:has(.case-study-main--pending) .case-study-header { flex: none; margin-bottom: clamp(.75rem, 2dvh, 1.5rem); }
+.case-study-shell:has(.case-study-main--pending) > .profile-header { margin-bottom: clamp(.75rem, 2dvh, 1.5rem); }
 .case-study-shell:has(.case-study-main--pending) .case-study-main { min-height: 0; flex: 1; }
 .case-study-shell:has(.case-study-main--pending) .case-study-content { min-height: 0; flex: 1; }
 .case-study-shell:has(.case-study-main--pending) > .site-footer { flex: none; margin-top: clamp(.75rem, 2dvh, 1.5rem); }
@@ -227,6 +228,7 @@
   .case-study-concept p,
   .synthetic-data-context p { font-size: 1.125rem; }
   .case-study-shell { --case-study-radius: 1.25rem; width: 100%; padding: 1.5rem 1rem max(1rem, env(safe-area-inset-bottom)); }
+  .case-study-shell > .profile-header { margin-bottom: 2rem; }
   .case-study-header { min-height: 72px; align-items: center; margin-bottom: 2rem; padding-inline: 0; }
   .case-study-brand { margin-left: 0; font-size: 24px; line-height: 1; }
   .case-study-mobile-portrait { display: block; width: 40px; height: 60px; margin-left: auto; }
