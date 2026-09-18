@@ -45,6 +45,7 @@
 .case-study-media:has(.case-study-media-slide)::before { display: none; }
 .case-study-media img,
 .case-study-media video { display: block; width: 100%; aspect-ratio: 2 / 1; border-radius: var(--case-study-radius); background: var(--case-study-surface); object-fit: cover; }
+.case-study-media.case-study-hero--local-video video { height: auto; aspect-ratio: auto; object-fit: contain; }
 .case-study-media img.case-study-media-image--contain { height: auto; aspect-ratio: auto; object-fit: contain; }
 .case-study-media > img[hidden],
 .case-study-media > video[hidden],
