@@ -1,11 +1,11 @@
 .case-study-shell { --case-study-surface: #e9e4da; --case-study-radius: 1.5rem; width: min(100%, calc(var(--content-width) + (2 * var(--page-gutter)))); min-height: 100vh; margin-inline: auto; padding: var(--page-block) var(--page-gutter) 2rem; }
-.case-study-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 2.5rem; }
-.case-study-brand { margin-left: .25rem; font-family: var(--font-display); font-size: var(--text-title); font-weight: 400; letter-spacing: -.04em; line-height: 1.2; }
+.case-study-header { position: sticky; display: flex; min-height: 58px; align-items: center; gap: .625rem; margin-bottom: 2.5rem; padding-inline: .25rem 5rem; }
+.case-study-brand { min-width: 0; flex: 1; font-family: var(--font-display); font-size: var(--text-title); font-weight: 400; letter-spacing: -.04em; line-height: 1.2; }
 .case-study-mobile-portrait { display: none; }
 .case-study-mobile-portrait img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.case-study-portrait { display: block; width: 63px; height: 57px; flex: none; }
+.case-study-portrait { position: absolute; top: 0; right: .25rem; display: block; width: 63px; height: 57px; }
 .case-study-portrait img { display: block; width: 63px; height: 57px; object-fit: contain; }
-.case-study-nav { display: flex; align-items: center; gap: .75rem; margin-left: auto; font-size: var(--text-small); font-weight: 700; }
+.case-study-nav { display: flex; flex: none; align-items: center; gap: .625rem; font-size: var(--text-small); font-weight: 700; }
 .case-study-header > .case-study-nav a { text-decoration: underline; text-underline-offset: .18em; }
 .case-study-nav--bottom { width: 100%; justify-content: center; margin-top: 1rem; }
 .case-study-nav a:hover { text-decoration: underline; text-underline-offset: .2em; }
@@ -227,7 +227,7 @@
   .case-study-concept p,
   .synthetic-data-context p { font-size: 1.125rem; }
   .case-study-shell { --case-study-radius: 1.25rem; width: 100%; padding: 1.5rem 1rem max(1rem, env(safe-area-inset-bottom)); }
-  .case-study-header { min-height: 72px; align-items: center; margin-bottom: 2rem; }
+  .case-study-header { min-height: 72px; align-items: center; margin-bottom: 2rem; padding-inline: 0; }
   .case-study-brand { margin-left: 0; font-size: 24px; line-height: 1; }
   .case-study-mobile-portrait { display: block; width: 40px; height: 60px; margin-left: auto; }
   .case-study-portrait { display: none; }
