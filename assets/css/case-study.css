@@ -34,6 +34,9 @@
 .case-study-hero + .case-study-intro-cards { margin-top: 16px; }
 .case-study-intro-cards h2 { margin: 0; font-family: var(--font-body); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; line-height: 1.25; }
 .case-study-intro-cards--inline { margin-bottom: 2rem; }
+.case-study-intro-featured-video { width: 100%; margin: 0; }
+.case-study-intro-featured-video video { display: block; width: 100%; height: auto; border-radius: var(--case-study-radius); background: var(--case-study-surface); object-fit: contain; }
+.case-study-intro-featured-video figcaption { margin-top: .75rem; color: #666; font-size: 1rem; line-height: 1.35; }
 .case-study-intro-card-grid { display: grid; width: 100%; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
 .case-study-intro-card-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-study-intro-card { display: flex; width: 100%; min-width: 0; height: fit-content; margin: 0; overflow: visible; background: transparent; flex-direction: column; gap: 8px; }
