@@ -27,6 +27,7 @@
 .case-study-project-summary p { max-width: 1180px; font-size: 28px; line-height: 1.4; overflow-wrap: anywhere; }
 .case-study-project-summary p + p { margin-top: 1rem; }
 .case-study-project-summary--bold p { font-weight: 700; }
+.case-study-project-summary--bold .case-study-project-summary-supporting { font-weight: 400; }
 .case-study-intro-cards { display: flex; width: 100%; min-width: 0; align-items: flex-start; flex-direction: column; gap: 20px; }
 .case-study-hero + .case-study-intro-cards { margin-top: 16px; }
 .case-study-intro-cards h2 { margin: 0; font-family: var(--font-body); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; line-height: 1.25; }
