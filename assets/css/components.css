@@ -7,8 +7,8 @@
 .profile-mobile-summary,
 .profile-mobile-meta { display: none; }
 .profile-actions { display: flex; flex: none; align-items: center; gap: .625rem; }
-.profile-actions a { display: flex; align-items: center; gap: .25rem; font-size: var(--text-small); font-weight: 700; text-decoration: underline; text-underline-offset: .18em; white-space: nowrap; }
-.profile-actions a:hover { text-decoration-thickness: 2px; }
+.profile-actions a { display: flex; align-items: center; gap: .25rem; font-size: var(--text-small); font-weight: 700; text-decoration: none; white-space: nowrap; }
+.profile-actions a:hover { text-decoration: none; }
 .profile-actions img { display: block; width: 17px; height: 17px; }
 .profile-actions .profile-action-icon { display: none; }
 .profile-metadata { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1.1fr) minmax(0, .55fr) minmax(0, 1.65fr); align-items: start; gap: clamp(2rem, 3vw, 3.5rem); font-size: var(--text-small); }
