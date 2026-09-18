@@ -5,7 +5,7 @@
 .case-study-mobile-portrait img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .case-study-portrait { display: block; width: 63px; height: 57px; flex: none; }
 .case-study-portrait img { display: block; width: 63px; height: 57px; object-fit: contain; }
-.case-study-nav { display: flex; align-items: center; gap: .75rem; margin-left: auto; font-size: .75rem; font-weight: 700; }
+.case-study-nav { display: flex; align-items: center; gap: .75rem; margin-left: auto; font-size: var(--text-small); font-weight: 700; }
 .case-study-header > .case-study-nav a { text-decoration: underline; text-underline-offset: .18em; }
 .case-study-nav--bottom { width: 100%; justify-content: center; margin-top: 1rem; }
 .case-study-nav a:hover { text-decoration: underline; text-underline-offset: .2em; }
