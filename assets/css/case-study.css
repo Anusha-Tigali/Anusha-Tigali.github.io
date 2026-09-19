@@ -228,7 +228,12 @@
   .case-study-concept p,
   .synthetic-data-context p { font-size: 1.125rem; }
   .case-study-shell { --case-study-radius: 1.25rem; width: 100%; padding: 1.5rem 1rem max(1rem, env(safe-area-inset-bottom)); }
-  .case-study-shell > .profile-header { margin-bottom: 2rem; }
+  .case-study-shell > .profile-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    margin-bottom: 2rem;
+  }
   .case-study-header { min-height: 72px; align-items: center; margin-bottom: 2rem; padding-inline: 0; }
   .case-study-brand { margin-left: 0; font-size: 24px; line-height: 1; }
   .case-study-mobile-portrait { display: block; width: 40px; height: 60px; margin-left: auto; }

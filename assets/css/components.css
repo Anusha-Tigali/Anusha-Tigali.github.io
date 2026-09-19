@@ -192,7 +192,15 @@
   .home-page .profile-mobile-meta-tags a,
   .home-page .profile-mobile-meta-links a { text-decoration: underline; text-underline-offset: .18em; }
   .profile-actions { gap: .75rem; }
-  .home-page .profile-actions { display: none; }
+  .home-page .profile-actions {
+    display: flex;
+    width: 100%;
+    order: 1;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .home-page .profile-mobile-summary { order: 2; }
+  .home-page .profile-mobile-meta { order: 3; }
   body:not(.home-page) .profile-title-row {
     display: grid;
     grid-template-areas:
