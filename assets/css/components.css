@@ -193,6 +193,31 @@
   .home-page .profile-mobile-meta-links a { text-decoration: underline; text-underline-offset: .18em; }
   .profile-actions { gap: .75rem; }
   .home-page .profile-actions { display: none; }
+  body:not(.home-page) .profile-title-row {
+    display: grid;
+    grid-template-areas:
+      "name portrait"
+      "actions actions";
+    grid-template-columns: minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: .25rem 1rem;
+  }
+  body:not(.home-page) .profile-name { grid-area: name; }
+  body:not(.home-page) .profile-portrait {
+    width: 40px;
+    height: 55px;
+    grid-area: portrait;
+    justify-self: end;
+  }
+  body:not(.home-page) .profile-portrait img { width: 40px; height: 55px; }
+  body:not(.home-page) .profile-actions {
+    width: 100%;
+    grid-area: actions;
+    justify-content: space-between;
+    gap: 0;
+  }
+  body:not(.home-page) .profile-mobile-summary,
+  body:not(.home-page) .profile-mobile-meta { display: none; }
   .profile-metadata { display: none; }
   .intro { display: none; }
   .portfolio-index { display: flex; width: 100%; min-height: 0; align-self: stretch; flex: none; flex-direction: column; border: 0; }
